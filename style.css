@@ -1,0 +1,287 @@
+html {
+  scroll-behavior: smooth;
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.6;
+  color: #1b222c;
+  background-color: #f7f9fc;
+}
+
+.container {
+  width: 100%;
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+/* Header & Navigation — Mobile first */
+.site-header {
+  background-color: #ffffff;
+  border-bottom: 1px solid #d8e0ea;
+  padding: 14px 0;
+}
+
+.header-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.brand {
+  text-decoration: none;
+  color: #111827;
+  display: flex;
+  flex-direction: column;
+}
+
+.brand span {
+  font-size: 0.9rem;
+  color: #4b5563;
+}
+
+.site-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.site-nav a {
+  text-decoration: none;
+  color: #1d4ed8;
+  font-weight: 600;
+  padding: 4px 2px;
+}
+
+.site-nav a:hover,
+.site-nav a:focus {
+  text-decoration: underline;
+  color: #1e3a8a;
+}
+
+/* Hero & Profile Summary — 1 column on mobile */
+.hero {
+  padding: 28px 0;
+}
+
+.hero-grid,
+.projects-grid,
+.details-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+.eyebrow {
+  margin: 0 0 6px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #1d4ed8;
+}
+
+h1 {
+  margin: 0 0 6px;
+  font-size: 2rem;
+  line-height: 1.2;
+}
+
+.subtitle {
+  margin: 0 0 12px;
+  font-weight: 600;
+  color: #374151;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 16px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  border: 2px solid #1d4ed8;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.btn-primary {
+  background-color: #1d4ed8;
+  color: #ffffff;
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+  background-color: #1e3a8a;
+  border-color: #1e3a8a;
+}
+
+.btn-secondary {
+  background-color: #ffffff;
+  color: #1d4ed8;
+}
+
+.btn-secondary:hover,
+.btn-secondary:focus {
+  background-color: #eff6ff;
+}
+
+.profile-summary,
+.card,
+.info-box {
+  background-color: #ffffff;
+  border: 1px solid #d8e0ea;
+  border-radius: 8px;
+  padding: 20px;
+}
+
+.profile-summary h2,
+.section h2 {
+  margin-top: 0;
+}
+
+.profile-summary ul {
+  margin: 0;
+  padding-left: 18px;
+}
+
+.profile-summary li {
+  margin-bottom: 8px;
+}
+
+/* Sections & Cards */
+.section {
+  padding: 28px 0;
+}
+
+.section-alt {
+  background-color: #eef2f7;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  border-color: #1d4ed8;
+}
+
+.card-tag {
+  margin: 0 0 6px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #1d4ed8;
+}
+
+.card h3 {
+  margin: 0 0 8px;
+}
+
+.text-link {
+  color: #1d4ed8;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.text-link:hover,
+.text-link:focus {
+  text-decoration: underline;
+}
+
+/* Footer */
+.site-footer {
+  background-color: #111827;
+  color: #f9fafb;
+  padding: 20px 0;
+  margin-top: 24px;
+}
+
+.footer-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.footer-links a {
+  color: #dbeafe;
+  text-decoration: none;
+}
+
+.footer-links a:hover,
+.footer-links a:focus {
+  text-decoration: underline;
+}
+
+/* Tablet breakpoint */
+@media screen and (min-width: 772px) {
+  .header-inner {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .footer-inner {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+/* Desktop breakpoint */
+@media screen and (min-width: 992px) {
+  .hero-grid {
+    grid-template-columns: 1.5fr 1fr;
+    align-items: start;
+  }
+
+  .projects-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .details-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .btn,
+  .card {
+    transition: none;
+  }
+
+  .card:hover {
+    transform: none;
+  }
+}
